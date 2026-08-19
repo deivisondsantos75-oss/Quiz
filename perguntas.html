@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Perguntas</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz</h1>
+    </header>
+
+    <main>
+        <div class="progress-track">
+            <div class="progress-label">
+                <span id="progress-current">Pergunta 1 de 1</span>
+                <span id="progress-score">Acertos: 0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <section class="quiz-card" id="quiz-card">
+            <span class="question-eyebrow" id="question-eyebrow">Pergunta</span>
+            <p class="question-text" id="question-text"></p>
+
+            <div class="options-list" id="options-list">
+                <!-- Opções inseridas dinamicamente pelo quiz.js -->
+            </div>
+
+            <p class="feedback" id="feedback"></p>
+
+            <button class="next-btn" id="next-btn" disabled>Próxima</button>
+        </section>
+
+        <section class="results-card" id="results-card" hidden>
+            <span class="question-eyebrow">Resultado</span>
+            <p class="results-score" id="results-score"></p>
+            <p class="results-message" id="results-message"></p>
+            <button id="restart-btn">Refazer o quiz</button>
+        </section>
+    </main>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
