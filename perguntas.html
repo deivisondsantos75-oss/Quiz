@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - Perguntas</title>
+    <title>Gênio Quiz de Front-End - Perguntas</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
-        <h1>Quiz</h1>
+        <h1>Gênio Quiz de Front-End</h1>
     </header>
 
     <main>
-        <div class="progress-track">
-            <div class="progress-label">
-                <span id="progress-current">Pergunta 1 de 1</span>
-                <span id="progress-score">Acertos: 0</span>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
-            </div>
-        </div>
-
         <section class="quiz-card" id="quiz-card">
-            <span class="question-eyebrow" id="question-eyebrow">Pergunta</span>
+            <div class="question-meta">
+                <span class="question-eyebrow" id="question-eyebrow">Pergunta</span>
+                <span class="question-stats" id="question-stats">Acertos: 0 · Erros: 0/5</span>
+            </div>
             <p class="question-text" id="question-text"></p>
 
             <div class="options-list" id="options-list">
@@ -42,6 +35,14 @@
             <button id="restart-btn">Refazer o quiz</button>
         </section>
     </main>
+
+    <footer>
+        <p class="footer-description">
+            Esse quiz foi feito por Deivison Dos Santos, Rafael Tamy, Cauã Eduardo e Davi Ribeiro,
+            para testar seu conhecimento sobre front-end (HTML, JS, CSS).
+        </p>
+        <p class="footer-rights">© 2026 · Todos os direitos reservados · 19/08/2026</p>
+    </footer>
 
     <script src="quiz.js"></script>
 </body>
