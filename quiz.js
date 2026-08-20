@@ -1,11 +1,4 @@
-// quiz.js
-// Lógica do quiz: renderiza perguntas, valida respostas, controla pontuação,
-// toca sons de acerto/erro e exibe o resultado final. Todo o conteúdo é
-// gerado a partir do array `questions`, dividido em 4 blocos de 5 perguntas,
-// um por criador do quiz.
-
 const questions = [
-    // ---------- HTML (Deivison Dos Santos) ----------
     {
         question: "O que significa a sigla HTML?",
         options: [
@@ -37,7 +30,6 @@ const questions = [
         correctIndex: 1
     },
 
-    // ---------- CSS (Rafael Tamy) ----------
     {
         question: "Em CSS, qual propriedade controla o espaçamento interno de um elemento?",
         options: ["margin", "padding", "spacing", "gap"],
@@ -69,7 +61,6 @@ const questions = [
         correctIndex: 2
     },
 
-    // ---------- JavaScript (Cauã Eduardo) ----------
     {
         question: "Em JavaScript, qual método é usado para selecionar um elemento pelo seu id?",
         options: [
@@ -101,7 +92,6 @@ const questions = [
         correctIndex: 2
     },
 
-    // ---------- Front-end geral (Davi Ribeiro) ----------
     {
         question: "O que o atributo 'defer' faz em uma tag <script>?",
         options: [
@@ -148,13 +138,6 @@ const questions = [
         correctIndex: 1
     }
 ];
-
-// ---------- Estado do quiz ----------
-
-// Limite de erros permitidos antes do quiz encerrar antes do fim (inspirado
-// na regra do Gênio Quiz original, que permite errar 3 em 50 perguntas).
-// Como aqui temos 20 perguntas, ajustei a proporção para um limite de 5 —
-// dá pra mudar esse número livremente.
 const MAX_WRONG_ANSWERS = 5;
 
 let currentIndex = 0;
@@ -163,7 +146,6 @@ let wrongCount = 0;
 let answered = false;
 let gameOver = false;
 
-// ---------- Referências do DOM ----------
 
 const quizCard = document.getElementById('quiz-card');
 const questionEyebrow = document.getElementById('question-eyebrow');
@@ -179,8 +161,6 @@ const resultsMessage = document.getElementById('results-message');
 const restartBtn = document.getElementById('restart-btn');
 
 const optionLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
-
-// ---------- Sons (gerados via Web Audio API, sem arquivos externos) ----------
 
 let audioCtx = null;
 
@@ -218,7 +198,7 @@ function playCorrectSound() {
         playTone(523.25, 0, 0.14, 'sine', 0.18);   // C5
         playTone(783.99, 0.1, 0.22, 'sine', 0.18); // G5
     } catch (err) {
-        // Ambiente sem suporte a áudio (ou bloqueado); segue sem som.
+
     }
 }
 
@@ -227,11 +207,10 @@ function playWrongSound() {
         playTone(220, 0, 0.22, 'sawtooth', 0.12);
         playTone(155, 0.07, 0.26, 'sawtooth', 0.1);
     } catch (err) {
-        // Ambiente sem suporte a áudio (ou bloqueado); segue sem som.
+        
     }
 }
 
-// ---------- Renderização ----------
 
 function renderQuestion() {
     answered = false;
@@ -279,7 +258,6 @@ function selectOption(selectedIndex, selectedButton) {
     const current = questions[currentIndex];
     const isCorrect = selectedIndex === current.correctIndex;
 
-    // Desabilita todas as opções e marca a correta/errada
     const allButtons = optionsList.querySelectorAll('.option');
     allButtons.forEach((btn, index) => {
         btn.disabled = true;
@@ -388,11 +366,7 @@ function restartQuiz() {
     renderQuestion();
 }
 
-// ---------- Eventos ----------
-
 nextBtn.addEventListener('click', nextQuestion);
 restartBtn.addEventListener('click', restartQuiz);
-
-// ---------- Início ----------
 
 renderQuestion();
