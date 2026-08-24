@@ -37,19 +37,40 @@ O **Gênio Quiz de Front-End** é um quiz web que testa conhecimentos de HTML, C
 
 ## Arquitetura
 
-O projeto é um site estático de múltiplas páginas, sem back-end ou banco de dados:
+O projeto é um site estático de múltiplas páginas, sem back-end ou banco de dados, organizado em pastas por tipo de arquivo:
 
-| Arquivo            | Responsabilidade                                             |
-|---------------------|---------------------------------------------------------------|
-| `index.html`        | Tela inicial, com o botão de início do quiz                   |
-| `perguntas.html`    | Tela do quiz, onde as perguntas são renderizadas               |
-| `main.css`          | Estilos compartilhados entre as páginas                        |
-| `script.js`         | Lógica da tela inicial (redirecionamento para o quiz)           |
-| `quiz.js`           | Lógica do quiz: banco de perguntas, pontuação, feedback sonoro e resultado |
+```
+genio-quiz-frontend/
+├── Pages/
+│   ├── index.html
+│   └── perguntas.html
+├── Css/
+│   └── main.css
+├── Js/
+│   ├── components.js
+│   ├── script.js
+│   └── quiz.js
+└── README.md
+```
+
+| Arquivo               | Responsabilidade                                                        |
+|-------------------------|---------------------------------------------------------------------------|
+| `Pages/index.html`      | Tela inicial, com o botão de início do quiz                             |
+| `Pages/perguntas.html`  | Tela do quiz, onde as perguntas, o resultado e o gabarito são renderizados |
+| `Css/main.css`          | Estilos compartilhados entre as páginas                                  |
+| `Js/components.js`      | Header e footer reutilizáveis, definidos como Web Components            |
+| `Js/script.js`          | Lógica da tela inicial (redirecionamento para o quiz)                    |
+| `Js/quiz.js`            | Lógica do quiz: banco de perguntas, pontuação, feedback sonoro, resultado e gabarito |
+
+Como os HTMLs ficam dentro de `Pages/`, eles referenciam os outros arquivos com caminho relativo subindo um nível: `../Css/main.css` e `../Js/*.js`.
+
+O header (`<site-header>`) e o footer (`<site-footer>`) são componentes customizados definidos uma única vez em `components.js` e reutilizados em `index.html` e `perguntas.html`, evitando duplicar o mesmo HTML nas duas páginas.
+
+Cada pergunta em `quiz.js` guarda também uma explicação (`explanation`). Toda resposta marcada pelo usuário é armazenada em memória durante a sessão, e ao final do quiz a tela de resultado mostra o gabarito completo: a resposta escolhida, a resposta correta (quando errada) e a explicação de cada pergunta, atrás de um botão "Ver gabarito".
 
 **Fluxo de dados:**
 
-`Navegador (HTML + CSS)` → `DOM` → `JavaScript (quiz.js / script.js)`
+`Navegador (HTML + CSS)` → `DOM` → `JavaScript (components.js / quiz.js / script.js)`
 
 ---
 
@@ -70,7 +91,7 @@ cd genio-quiz-frontend
 
 **2. Como rodar**
 
-Basta abrir o arquivo `index.html` no navegador, ou usar uma extensão como o Live Server no VS Code para servir os arquivos localmente.
+Basta abrir o arquivo `Pages/index.html` no navegador, ou usar uma extensão como o Live Server no VS Code para servir os arquivos localmente.
 
 ---
 
@@ -111,8 +132,12 @@ Contribuições são bem-vindas. Se tiver sugestões para melhorar o projeto:
 
 ---
 
-##  Equipe Gênio Quiz de Front-End
+## Contato
 
-© 2026 · Feito por Deivison Dos Santos, Rafael Tamy, Cauã Eduardo e Davi Ribeiro
+**Equipe Gênio Quiz de Front-End**
+
+Deivison Dos Santos, Rafael Tamy, Cauã Eduardo e Davi Ribeiro
+
+Link do repositório: [github.com/seu-usuario/genio-quiz-frontend](https://github.com/seu-usuario/genio-quiz-frontend)
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>

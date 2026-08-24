@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Gênio Quiz dos Supremos</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <main>
+        <div class="hero">
+            <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false" aria-label="Ativar som">
+                <span class="sound-icon">🔇</span>
+            </button>
+
+            <div class="arcade-cabinet">
+                <div class="marquee">
+                    <span class="marquee-text">GÊNIO QUIZ DOS SUPREMOS</span>
+                </div>
+
+                <div class="screen">
+                    <div class="scanlines"></div>
+                    <div class="screen-content">
+                        <h1>Bem-vindo ao<br>Gênio Quiz dos Supremos</h1>
+                        <p class="insert-coin">Pressione iniciar para jogar</p>
+                    </div>
+                </div>
+
+                <div class="control-panel">
+                    <div class="joystick" aria-hidden="true">
+                        <span class="joystick-stick"></span>
+                        <span class="joystick-ball"></span>
+                    </div>
+
+                    <button id="start-btn">Iniciar</button>
+
+                    <div class="button-row" aria-hidden="true">
+                        <span class="arc-dot dot-red"></span>
+                        <span class="arc-dot dot-blue"></span>
+                        <span class="arc-dot dot-yellow"></span>
+                        <span class="arc-dot dot-green"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <audio id="bg-music" src="../audio/thema_undertale.mp3" loop preload="auto"></audio>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
