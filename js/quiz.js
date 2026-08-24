@@ -7,38 +7,45 @@ const questions = [
             "Hyper Transfer Markup Language",
             "Home Tool Markup Language"
         ],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "HTML significa HyperText Markup Language (Linguagem de Marcação de Hipertexto), a linguagem usada para estruturar o conteúdo das páginas web."
     },
     {
         question: "Qual tag HTML é usada para criar um link?",
         options: ["<link>", "<a>", "<href>", "<nav>"],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "A tag <a> (anchor) é usada para criar links. O destino é definido pelo atributo href, que não é uma tag em si."
     },
     {
         question: "Qual tag é usada para inserir uma imagem em uma página HTML?",
         options: ["<image>", "<picture>", "<img>", "<src>"],
-        correctIndex: 2
+        correctIndex: 2,
+        explanation: "A tag <img> insere imagens na página. O atributo src indica o caminho do arquivo, mas src sozinho não é uma tag."
     },
     {
         question: "Qual elemento semântico HTML representa o conteúdo principal de uma página?",
         options: ["<section>", "<main>", "<content>", "<body>"],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "A tag <main> representa o conteúdo principal e único da página, diferente de <body>, que envolve toda a página, incluindo header e footer."
     },
     {
         question: "Qual atributo define um texto alternativo para uma imagem, usado por leitores de tela?",
         options: ["title", "alt", "description", "label"],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "O atributo alt fornece uma descrição textual da imagem, essencial para acessibilidade e para quando a imagem não carrega."
     },
 
     {
         question: "Em CSS, qual propriedade controla o espaçamento interno de um elemento?",
         options: ["margin", "padding", "spacing", "gap"],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "padding controla o espaçamento interno, entre o conteúdo e a borda do elemento. margin controla o espaçamento externo."
     },
     {
         question: "Qual valor de 'display' em CSS transforma um elemento em um contêiner flexível?",
         options: ["block", "inline", "flex", "grid-row"],
-        correctIndex: 2
+        correctIndex: 2,
+        explanation: "display: flex transforma o elemento em um flex container, permitindo organizar os filhos em linha ou coluna com alinhamento flexível."
     },
     {
         question: "Qual seletor CSS tem a maior especificidade?",
@@ -48,17 +55,20 @@ const questions = [
             "Seletor de id (#exemplo)",
             "Seletor universal (*)"
         ],
-        correctIndex: 2
+        correctIndex: 2,
+        explanation: "Seletores de id têm a maior especificidade entre essas opções, seguidos por classes, depois elementos, e por último o seletor universal."
     },
     {
         question: "Qual unidade de medida em CSS é relativa ao tamanho da fonte do elemento pai?",
         options: ["px", "em", "vh", "deg"],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "em é relativa ao tamanho da fonte do elemento pai. px é um valor fixo, vh é relativo à altura da viewport e deg mede ângulos."
     },
     {
         question: "Qual propriedade CSS controla o espaçamento externo de um elemento?",
         options: ["padding", "border", "margin", "outline"],
-        correctIndex: 2
+        correctIndex: 2,
+        explanation: "margin controla o espaço fora da borda do elemento, empurrando outros elementos para longe dele."
     },
 
     {
@@ -69,27 +79,32 @@ const questions = [
             "document.selectById()",
             "document.findId()"
         ],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "document.getElementById() retorna o elemento que possui o id informado. Os outros métodos citados não existem no DOM."
     },
     {
         question: "Qual palavra-chave declara uma variável cujo valor não pode ser reatribuído?",
         options: ["var", "let", "const", "static"],
-        correctIndex: 2
+        correctIndex: 2,
+        explanation: "const declara uma variável cuja referência não pode ser reatribuída após a criação. let e var permitem reatribuição."
     },
     {
         question: "Qual método é usado para adicionar um evento de clique a um elemento?",
         options: ["addEventListener()", "onClick()", "attachEvent()", "listenTo()"],
-        correctIndex: 0
+        correctIndex: 0,
+        explanation: "addEventListener() é o método padrão para associar eventos, como 'click', a um elemento do DOM."
     },
     {
         question: "Qual método de array executa uma função para cada elemento dele?",
         options: ["map()", "forEach()", "filter()", "reduce()"],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "forEach() executa uma função para cada elemento do array, sem retornar um novo array (diferente de map())."
     },
     {
         question: "Qual operador verifica igualdade de valor e tipo em JavaScript?",
         options: ["==", "=", "===", "!="],
-        correctIndex: 2
+        correctIndex: 2,
+        explanation: "=== compara valor e tipo (igualdade estrita). == compara apenas o valor, convertendo tipos quando necessário."
     },
 
     {
@@ -100,7 +115,8 @@ const questions = [
             "Adia a execução do script até o HTML ser totalmente processado",
             "Carrega o script em uma nova aba"
         ],
-        correctIndex: 2
+        correctIndex: 2,
+        explanation: "defer adia a execução do script até que o HTML tenha sido completamente processado, sem bloquear a renderização da página."
     },
     {
         question: "Para que servem as media queries em CSS?",
@@ -110,7 +126,8 @@ const questions = [
             "Para consultar um banco de dados",
             "Para importar fontes externas"
         ],
-        correctIndex: 0
+        correctIndex: 0,
+        explanation: "Media queries permitem aplicar estilos diferentes conforme características da tela, como largura, sendo a base do design responsivo."
     },
     {
         question: "O que significa a sigla DOM, usada em JavaScript?",
@@ -120,12 +137,14 @@ const questions = [
             "Display Order Manager",
             "Design Object Method"
         ],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "DOM significa Document Object Model: a representação em forma de objetos da estrutura do documento HTML, manipulável via JavaScript."
     },
     {
         question: "Qual ferramenta é amplamente usada para versionamento de código em projetos de front-end?",
         options: ["Git", "Figma", "Photoshop", "Postman"],
-        correctIndex: 0
+        correctIndex: 0,
+        explanation: "Git é o sistema de controle de versão mais usado para rastrear mudanças no código. Figma, Photoshop e Postman têm outras finalidades."
     },
     {
         question: "O que significa a abordagem 'mobile first' no design responsivo?",
@@ -135,7 +154,8 @@ const questions = [
             "Usar apenas aplicativos mobile",
             "Bloquear o acesso via desktop"
         ],
-        correctIndex: 1
+        correctIndex: 1,
+        explanation: "Mobile first significa projetar o layout primeiro para telas pequenas e depois adaptá-lo para telas maiores, usando media queries."
     }
 ];
 const MAX_WRONG_ANSWERS = 5;
@@ -146,13 +166,13 @@ let wrongCount = 0;
 let answered = false;
 let gameOver = false;
 
-
 const quizCard = document.getElementById('quiz-card');
 const questionEyebrow = document.getElementById('question-eyebrow');
 const questionStats = document.getElementById('question-stats');
 const questionText = document.getElementById('question-text');
 const optionsList = document.getElementById('options-list');
 const feedback = document.getElementById('feedback');
+const explanationEl = document.getElementById('explanation');
 const nextBtn = document.getElementById('next-btn');
 
 const resultsCard = document.getElementById('results-card');
@@ -207,7 +227,7 @@ function playWrongSound() {
         playTone(220, 0, 0.22, 'sawtooth', 0.12);
         playTone(155, 0.07, 0.26, 'sawtooth', 0.1);
     } catch (err) {
-        
+
     }
 }
 
@@ -216,6 +236,8 @@ function renderQuestion() {
     answered = false;
     feedback.textContent = '';
     feedback.className = 'feedback';
+    explanationEl.textContent = '';
+    explanationEl.hidden = true;
     nextBtn.disabled = true;
 
     const isLastQuestion = currentIndex === questions.length - 1;
@@ -286,6 +308,9 @@ function selectOption(selectedIndex, selectedButton) {
             gameOver = true;
         }
     }
+
+    explanationEl.textContent = current.explanation;
+    explanationEl.hidden = false;
 
     setTimeout(() => {
         quizCard.classList.remove('flash-correct', 'flash-wrong');
