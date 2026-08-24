@@ -111,12 +111,8 @@ Contribuições são bem-vindas. Se tiver sugestões para melhorar o projeto:
 
 ---
 
-## Contato
-
-**Equipe Gênio Quiz de Front-End**
+##  Equipe Gênio Quiz de Front-End
 
 © 2026 · Feito por Deivison Dos Santos, Rafael Tamy, Cauã Eduardo e Davi Ribeiro
-
-Link do repositório: [github.com/seu-usuario/genio-quiz-frontend](https://github.com/seu-usuario/genio-quiz-frontend)
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
