@@ -6,7 +6,6 @@ if (startBtn) {
     });
 }
 
-// --- Trilha sonora da tela inicial ---
 const bgMusic = document.getElementById('bg-music');
 const soundToggle = document.getElementById('sound-toggle');
 const soundIcon = soundToggle ? soundToggle.querySelector('.sound-icon') : null;

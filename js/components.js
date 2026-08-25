@@ -1,13 +1,8 @@
-// components.js
-// Web Components reutilizáveis para o header e o footer do site.
-// Usando Light DOM (sem shadow root) para que os estilos de main.css
-// continuem funcionando normalmente nos seletores <header> e <footer>.
-
 class SiteHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <header>
-                <h1>Gênio Quiz dos Supremos</h1>
+                <h1>Gênio Quiz de Front-End</h1>
             </header>
         `;
     }

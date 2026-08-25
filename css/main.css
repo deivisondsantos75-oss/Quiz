@@ -128,7 +128,6 @@ main {
     outline-offset: 3px;
 }
 
-/* --- Gabinete do fliperama --- */
 .arcade-cabinet {
     width: 100%;
     max-width: 620px;
@@ -140,8 +139,6 @@ main {
         0 26px 55px rgba(0, 0, 0, 0.5),
         inset 0 0 0 3px rgba(0, 0, 0, 0.25);
 }
-
-/* Letreiro superior, em ângulo, com o nome do quiz em neon */
 .marquee {
     position: relative;
     background: var(--marquee-bg);
@@ -166,8 +163,6 @@ main {
         0 0 36px rgba(255, 176, 32, 0.35);
     animation: neonFlicker 3.6s infinite ease-in-out;
 }
-
-/* Tela CRT */
 .screen {
     position: relative;
     background: var(--screen-black);
@@ -235,8 +230,6 @@ main > p {
     font-size: 0.8rem;
     color: var(--accent);
 }
-
-/* Painel de controle: joystick decorativo + botão de iniciar + luzes */
 .control-panel {
     display: flex;
     align-items: center;
@@ -408,8 +401,6 @@ button:focus-visible {
         max-width: none;
     }
 }
-
-/* --- Tela de perguntas: reaproveita a mesma tela CRT do fliperama --- */
 .quiz-screen {
     width: 100%;
     max-width: 640px;
@@ -522,8 +513,6 @@ button:focus-visible {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
-
-/* Cores inspiradas no Kahoot: vermelho, azul, amarelo, verde */
 .options-list .option:nth-child(1) {
     background: #E21B3C;
 }
