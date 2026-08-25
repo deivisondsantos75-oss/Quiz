@@ -31,38 +31,49 @@ O **Gênio Quiz de Front-End** é um quiz web que testa conhecimentos de HTML, C
 | Estrutura | HTML5                  |
 | Estilo    | CSS3                   |
 | Lógica    | JavaScript (Vanilla)   |
-| Áudio     | Web Audio API           |
+| Áudio     | Web Audio API          |
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
 ---
 
 ## Arquitetura
 
-O projeto é um site estático de múltiplas páginas, sem back-end ou banco de dados, organizado em pastas por tipo de arquivo:
+O projeto segue o padrão de **separação por responsabilidade** (site estático, sem back-end ou banco de dados):
+
+- **Estrutura (HTML)** — Marcação semântica das telas, definida em `index.html` e `perguntas.html`
+- **Estilo (CSS)** — Estilos compartilhados entre as páginas, centralizados em `assets/css/main.css`
+- **Lógica (JavaScript)** — Regras do quiz, Web Components e feedback sonoro, divididos entre `script.js`, `quiz.js` e `components.js`
 
 ```
 genio-quiz-frontend/
-├── Pages/
-│   ├── index.html
-│   └── perguntas.html
-├── Css/
-│   └── main.css
-├── Js/
-│   ├── components.js
-│   ├── script.js
-│   └── quiz.js
+├── index.html
+├── perguntas.html
+├── assets/
+│   ├── css/
+│   │   └── main.css
+│   ├── js/
+│   │   ├── components.js
+│   │   ├── script.js
+│   │   └── quiz.js
+│   └── sounds/
+│       ├── correct.mp3
+│       └── wrong.mp3
 └── README.md
 ```
 
-| Arquivo               | Responsabilidade                                                        |
-|-------------------------|---------------------------------------------------------------------------|
-| `Pages/index.html`      | Tela inicial, com o botão de início do quiz                             |
-| `Pages/perguntas.html`  | Tela do quiz, onde as perguntas, o resultado e o gabarito são renderizados |
-| `Css/main.css`          | Estilos compartilhados entre as páginas                                  |
-| `Js/components.js`      | Header e footer reutilizáveis, definidos como Web Components            |
-| `Js/script.js`          | Lógica da tela inicial (redirecionamento para o quiz)                    |
-| `Js/quiz.js`            | Lógica do quiz: banco de perguntas, pontuação, feedback sonoro, resultado e gabarito |
+| Arquivo                    | Responsabilidade                                                           |
+|------------------------------|------------------------------------------------------------------------------|
+| `index.html`                | Tela inicial, com o botão de início do quiz                                |
+| `perguntas.html`            | Tela do quiz, onde as perguntas, o resultado e o gabarito são renderizados |
+| `assets/css/main.css`       | Estilos compartilhados entre as páginas                                    |
+| `assets/js/components.js`   | Header e footer reutilizáveis, definidos como Web Components               |
+| `assets/js/script.js`       | Lógica da tela inicial (redirecionamento para o quiz)                      |
+| `assets/js/quiz.js`         | Lógica do quiz: banco de perguntas, pontuação, feedback sonoro, resultado e gabarito |
 
-Como os HTMLs ficam dentro de `Pages/`, eles referenciam os outros arquivos com caminho relativo subindo um nível: `../Css/main.css` e `../Js/*.js`.
+Como `index.html` e `perguntas.html` ficam na raiz do projeto, as duas páginas referenciam os arquivos de `assets/` com o mesmo caminho relativo, sem precisar subir níveis (`../`).
 
 O header (`<site-header>`) e o footer (`<site-footer>`) são componentes customizados definidos uma única vez em `components.js` e reutilizados em `index.html` e `perguntas.html`, evitando duplicar o mesmo HTML nas duas páginas.
 
@@ -70,7 +81,11 @@ Cada pergunta em `quiz.js` guarda também uma explicação (`explanation`). Toda
 
 **Fluxo de dados:**
 
-`Navegador (HTML + CSS)` → `DOM` → `JavaScript (components.js / quiz.js / script.js)`
+```
+Navegador  ←→  HTML + CSS  ←→  DOM  ←→  JavaScript (components.js / script.js / quiz.js)
+                                              ↕
+                                     Web Audio API (feedback sonoro)
+```
 
 ---
 
@@ -91,7 +106,7 @@ cd genio-quiz-frontend
 
 **2. Como rodar**
 
-Basta abrir o arquivo `Pages/index.html` no navegador, ou usar uma extensão como o Live Server no VS Code para servir os arquivos localmente.
+Basta abrir o arquivo `index.html` no navegador, ou usar uma extensão como o Live Server no VS Code para servir os arquivos localmente.
 
 ---
 
